@@ -9,7 +9,7 @@ const space = {
   cols: floor(getWidth() / scale),
   rows: floor(getHeight() / scale),
   fps: 4,
-  fill: "rgba(255,255,255,0)",
+  fill: "#333",
   stroke: "rgba(0,0,0,0.4)",
 };
 

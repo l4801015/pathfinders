@@ -1,4 +1,4 @@
-export function Canvas (width, height) {
+function Canvas (width, height) {
 	this.width = width;
 	this.height = height;
 	this.canvas = document.createElement('canvas');
@@ -44,4 +44,4 @@ Canvas.prototype.drawGrid = function (gridSize, stroke) {
 	}
 }
 
-
+export default Canvas;

@@ -1,13 +1,8 @@
-import { Canvas } from "./Canvas";
-import { FPS } from "./FPS";
+import { FPS } from "./classes/FPS";
 import { draw, setup } from "./app";
+import { canvas } from "./canvas";
 import space from "./space";
 
-const width = space.width;
-const height = space.height;
-const scale = space.scale;
-const canvas = new Canvas(width, height);
-const ctx = canvas.init();
 const fps = new FPS(space.fps);
 
 let then = performance.now();
@@ -18,10 +13,10 @@ const loop = () => {
   if (delta > interval) {
     then = now - (delta % interval);
     canvas.clear(space.fill);
-    canvas.drawGrid(scale, space.stroke);
-    draw(ctx);
+    canvas.drawGrid(space.scale, space.stroke);
+    draw();
   }
   requestAnimationFrame(loop);
 };
-setup(ctx);
+setup();
 loop();
