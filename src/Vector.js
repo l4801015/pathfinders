@@ -1,4 +1,4 @@
-export function Vector(x, y) {
+function Vector(x, y) {
 	this.x = x;
 	this.y = y;
 }
@@ -42,4 +42,6 @@ Vector.prototype.length = function() {
 Vector.prototype.clone = function() {
 	return new Vector(this.x, this.y);
 }
+
+export default Vector;
 

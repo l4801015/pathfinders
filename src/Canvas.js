@@ -13,20 +13,20 @@ Canvas.prototype.init = function () {
 	this.canvas.style.left = '0px';
 	this.canvas.style.width = '100%';
 	this.canvas.style.height = '100%';
-	this.clear();
+//	this.clear();
 	document.body.appendChild(this.canvas);
 	return this.context;
 }
 
 
-Canvas.prototype.clear = function () {
+Canvas.prototype.clear = function (fill) {
 	this.context.clearRect(0, 0, this.width, this.height);
-	this.context.fillStyle = '#333';
+	this.context.fillStyle = fill;
 	this.context.fillRect(0, 0, this.width, this.height);
 }
 
-Canvas.prototype.drawGrid = function (gridSize) {
-	this.context.strokeStyle = 'rgba(255,255,255,0.1)';
+Canvas.prototype.drawGrid = function (gridSize, stroke) {
+	this.context.strokeStyle = stroke;
 	this.context.lineWidth = 1;
 	for (var i = 0; i < this.width; i += gridSize) {
 		this.context.beginPath();
