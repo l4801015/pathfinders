@@ -5,20 +5,23 @@ import { ctx } from '../canvas';
 import space from "../space";
 
 class Spot {
-  pos: vector;
-  ctx: CanvasRenderingContext2D;
-  size: number;
-  color: string;
+  public h: number = 0;
+  public g: number = 0;
+  public f: number = 0;
+  public pos: vector;
+  public ctx: CanvasRenderingContext2D;
+  public size: number;
+  public color: string;
 
-  constructor(size: number, vector: vector, color: string) {
+  constructor(size: number, vector: vector) {
     this.pos = this.pickLocation(vector.x, vector.y);
     this.size = size;
-    this.color = color;
+    //this.color = color;
     this.ctx = ctx;
   }
 
-  show() {
-    this.ctx.fillStyle = this.color;
+  show(color: string) {
+    this.ctx.fillStyle = color;
     this.ctx.fillRect(this.pos.x, this.pos.y, space.scale, space.scale);
   }
 
